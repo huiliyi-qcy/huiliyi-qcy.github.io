@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>C#using关键字的使用 | qiancy-blog</title><meta name="author" content="qiancy"><meta name="copyright" content="qiancy"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="开发规范">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C#using关键字的使用">
+<meta property="og:url" content="https://yuhost.cn/2023/06/06/Usingkeywords/index.html">
+<meta property="og:site_name" content="qiancy-blog">
+<meta property="og:description" content="开发规范">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yuhost.cn/img/background05.jpg">
+<meta property="article:published_time" content="2023-06-06T10:19:03.000Z">
+<meta property="article:modified_time" content="2023-06-07T14:00:00.000Z">
+<meta property="article:author" content="qiancy">
+<meta property="article:tag" content="C#">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yuhost.cn/img/background05.jpg"><link rel="shortcut icon" href="https://yuhost.cn/img/favicon.jpg"><link rel="canonical" href="https://yuhost.cn/2023/06/06/Usingkeywords/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C#using关键字的使用',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-07 22:00:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/self/Kimbiedark.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yuhost.cn/img/head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="qiancy-blog"><span class="site-name">qiancy-blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">C#using关键字的使用</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-06T10:19:03.000Z" title="发表于 2023-06-06 18:19:03">2023-06-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-07T14:00:00.000Z" title="更新于 2023-06-07 22:00:00">2023-06-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%96%87%E6%A1%A3/">文档</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C#using关键字的使用"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="1-命名空间的引入"><a href="#1-命名空间的引入" class="headerlink" title="1.命名空间的引入"></a>1.命名空间的引入</h1><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">using</span> System;<br><span class="hljs-keyword">using</span> System.Collections.Generic;<br><span class="hljs-keyword">using</span> System.Linq;<br><span class="hljs-keyword">using</span> System.Text;<br><span class="hljs-keyword">using</span> System.Threading.Tasks;<br><br><span class="hljs-keyword">namespace</span> <span class="hljs-title">Model</span><br>&#123;<br>    <span class="hljs-keyword">internal</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Class2</span><br>    &#123;<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="1-1-using-static"><a href="#1-1-using-static" class="headerlink" title="1.1 using static"></a>1.1 using static</h2><p>在.NET6.0中，引入了一个新的语法，using static，假设我们在一个项目中要频繁进行数学运算，如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">Math.Cos(d: 1);<br>Math.Round(a: 0.5);<br>Math.Pow(x: 2, y: 4);<br></code></pre></td></tr></table></figure>
+<p>但这样用的多了就太过繁琐，此时我们可以使用<code>using static System.Math;</code>命名空间，相当于静态地使用了命名空间<code>System.Math</code>的这个类，然后就可以把<code>Math.</code>删掉,让代码显得更为简练。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">Cos(d: 1);<br>Round(a: 0.5);<br>Pow(x: 2, y: 4);<br></code></pre></td></tr></table></figure>
+<p>但需要注意，这样的使用场景并不是很多，这种写法相当于把类中的所有静态方法全部暴露出来了，出现重名之类的问题就会变得比较繁琐。不过Math中的方法一般不会出现重名，但使用的时候仍需注意！</p>
+<h2 id="1-2-Global-Usings"><a href="#1-2-Global-Usings" class="headerlink" title="1.2 Global Usings"></a>1.2 Global Usings</h2><p>在C#10中，新增了一个语法<code>global using</code>，就是你可以在using前面加上个global，这样程序集中的多有类文件都可以识别到。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">global</span> <span class="hljs-keyword">using</span> Model.Common;<br><span class="hljs-keyword">global</span> <span class="hljs-keyword">using</span> System.Linq;<br><span class="hljs-keyword">global</span> <span class="hljs-keyword">using</span> Model.Response;<br></code></pre></td></tr></table></figure>
+<h2 id="1-3-Implicit-Usings"><a href="#1-3-Implicit-Usings" class="headerlink" title="1.3 Implicit Usings"></a>1.3 Implicit Usings</h2><p>C#10不仅提供了<code>global using</code>，还提供了<code>implicit usings</code>的方式，叫做隐式引用。不过这种方式是在.csproj文件中将ImplicitUsings置为enable，然后在ItemGroup节点添加你需要引入的东西，以下为例，这样就能在cs文件中使用Swashbuckle.AspNetCore相关的方法了。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C#">&lt;Project Sdk=<span class="hljs-string">&quot;Microsoft.NET.Sdk.Web&quot;</span>&gt;<br>  &lt;PropertyGroup&gt;<br>    &lt;TargetFramework&gt;net6<span class="hljs-number">.0</span>&lt;/TargetFramework&gt;<br>    &lt;Nullable&gt;enable&lt;/Nullable&gt;<br>    &lt;ImplicitUsings&gt;enable&lt;/ImplicitUsings&gt;<br>  &lt;/PropertyGroup&gt;<br>  &lt;ItemGroup&gt;<br>    &lt;PackageReference Include=<span class="hljs-string">&quot;Swashbuckle.AspNetCore&quot;</span> Version=<span class="hljs-string">&quot;6.2.3&quot;</span> /&gt;<br>  &lt;/ItemGroup&gt;<br>&lt;/Project&gt;<br></code></pre></td></tr></table></figure>
+<p>那么，到底是全局引用好用，还是隐式引用好用，你怎么看？</p>
+<div class="note info flat"><p>参考：<a target="_blank" rel="noopener" href="https://markgossa.com/2022/04/net-6-implicit-using-vs-global-using.html">.NET6全局引用和隐式引用</a></p>
+</div>
+
+<h2 id="1-4-Using-Alias"><a href="#1-4-Using-Alias" class="headerlink" title="1.4 Using Alias"></a>1.4 Using Alias</h2><p>我们在使用命名空间的时候，还可以起个别名，这样在代码中就可以使用别名。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Usingkeyword/01.png" alt="示例图片" style="zoom:50%;" /></p>
+<p>如图，在Window_Load方法中使用了<code>System.Windows.Forms</code>的<code>FolderBrowserDialog</code>方法和<code>Button</code>，但我继承自<code>ucBaseControl</code>类，我需要使<code>ucBaseControl</code>类下面的自定义的<code>Button</code>控件，如果直接像下面这写，可以有点繁杂。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Window_Load</span>()</span><br>&#123;<br>     <span class="hljs-keyword">var</span> diaglog = <span class="hljs-keyword">new</span> FolderBrowserDialog();<br>     <span class="hljs-keyword">var</span> btn=<span class="hljs-keyword">new</span> FrameWork.WinForms.Controls.NeuButton();<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>如果定义的时候使用using来定义，就显得比较方便了。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">using</span> ucControls = Neusoft.FrameWork.WinForms.Controls;<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Window_Load</span>()</span><br>&#123;<br>     <span class="hljs-keyword">var</span> diaglog = <span class="hljs-keyword">new</span> FolderBrowserDialog();<br>     <span class="hljs-keyword">var</span> btn=<span class="hljs-keyword">new</span> ucControls.NeuButton();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h1 id="2可释放资源的使用"><a href="#2可释放资源的使用" class="headerlink" title="2可释放资源的使用"></a>2可释放资源的使用</h1><h1 id="2-1-Using-IDisposable"><a href="#2-1-Using-IDisposable" class="headerlink" title="2.1 Using IDisposable"></a>2.1 Using IDisposable</h1><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Window_Load</span>()</span><br>&#123;<br>    <span class="hljs-keyword">using</span> (<span class="hljs-keyword">var</span> stream=<span class="hljs-keyword">new</span> FileStream(path: <span class="hljs-string">&quot;&quot;</span>, mode: FileMode.Open))<br>    &#123;<br>        <span class="hljs-keyword">using</span> (<span class="hljs-keyword">var</span> reader=<span class="hljs-keyword">new</span> StreamReader(stream, encoding: Encoding.UTF8))<br>        &#123;<br>            reader.ReadToEnd();<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>比如我上面写的这个读取文件的方法，如果觉得缩进有点难受，那就写成下面这种。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Window_Load</span>()</span><br>&#123;<br>    <span class="hljs-keyword">using</span> (<span class="hljs-keyword">var</span> stream = <span class="hljs-keyword">new</span> FileStream(path: <span class="hljs-string">&quot;&quot;</span>, mode: FileMode.Open))<br>    <span class="hljs-keyword">using</span> (<span class="hljs-keyword">var</span> reader = <span class="hljs-keyword">new</span> StreamReader(stream, encoding: Encoding.UTF8))<br>    &#123;<br>        reader.ReadToEnd();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>不过这么写依然不是最好的，在C#8中新增了一种语法，如下:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Window_Load</span>()</span><br>&#123;<br>    <span class="hljs-keyword">using</span> <span class="hljs-keyword">var</span> stream = <span class="hljs-keyword">new</span> FileStream(path: <span class="hljs-string">&quot;&quot;</span>, mode: FileMode.Open);<br>    <span class="hljs-keyword">using</span> <span class="hljs-keyword">var</span> reader = <span class="hljs-keyword">new</span> StreamReader(stream, encoding: Encoding.UTF8);<br>    <br>    reader.ReadToEnd();<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>这样写的话，只要在离开using所属的代码块儿的时候，比如说这个声明的作用域在某个函数中，那在离开这个函数的时候就会保证声明的变量被释放掉。</p>
+<p>using关键字到底干了啥，在LinqPad中看到它底层的C#语法：在你声明了一个变量之后，它会放到一个try里面，然后在finally的时候IDisposable掉。如下图所示：<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Usingkeyword/02.png" alt="示例图片" style="zoom:50%;" /><br>如果我们在加一个using，就会发现，其实是套了两个try，在第一层try的外面去声明stream，然后在第一层的try里面去声明reader，在里面的finally去释放掉reader，在外面的finally里去释放掉stream。<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Usingkeyword/03.png" alt="示例图片" style="zoom:50%;" /></p>
+<p>如果使用C#8提供的using语法，会发现<code>reader.ReadToEnd();</code>出现再来两个try之间，如下图：<br><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/Usingkeyword/04.png" alt="示例图片" style="zoom:50%;" /></p>
+<p>那是不是含有IDisposable这个接口的类，或者说使用了Disposable方法的类，必须使用using呢？其实不一定，举个例如，比如httpclient。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs C#"><span class="hljs-keyword">using</span> <span class="hljs-keyword">var</span> client = <span class="hljs-keyword">new</span> HttpClient();<br><span class="hljs-keyword">await</span> client.GetStreamAsync(requestUrl: <span class="hljs-string">&quot;&quot;</span>);<br></code></pre></td></tr></table></figure>
+<p>这样的话，在运行完后，client就会被释放掉。但其实HttpClient只实例化一次，并可以在程序的整个生命周期内重复使用，所以说并不是所有提供Disposable方法类型的我们都必须去using，或者主动调用Disposable，具体可参见官方文档。</p>
+<div class="note info flat"><p>参考：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/dotnet/api/system.net.http.httpclient?view=net-7.0">HttpClient</a></p>
+</div>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://yuhost.cn">qiancy</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://yuhost.cn/2023/06/06/Usingkeywords/">https://yuhost.cn/2023/06/06/Usingkeywords/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://yuhost.cn" target="_blank">qiancy-blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/C/">C#</a></div><div class="post_share"><div class="social-share" data-image="https://yuhost.cn/img/background05.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2023/06/15/hellow/" title="Markdown语法汇总"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yuhost.cn/img/background06.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Markdown语法汇总</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/07/05/C-annotation/" title="C#如何写注释"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yuhost.cn/img/background03.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-05</div><div class="title">C#如何写注释</div></div></a></div><div><a href="/2023/07/06/ProgrammingIssues/" title="程序开发常见问题和职业素养"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yuhost.cn/img/background06.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-06</div><div class="title">程序开发常见问题和职业素养</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://yuhost.cn/img/head.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">qiancy</div><div class="author-info__description">往前走，不要停</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/huiliyi-qcy"><i></i><span>前往我的窝点</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/huiliyi-qcy/huiliyi-qcy.github.io" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:kongguyoulairen@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9A%84%E5%BC%95%E5%85%A5"><span class="toc-text">1.命名空间的引入</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-using-static"><span class="toc-text">1.1 using static</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-Global-Usings"><span class="toc-text">1.2 Global Usings</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-Implicit-Usings"><span class="toc-text">1.3 Implicit Usings</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-Using-Alias"><span class="toc-text">1.4 Using Alias</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E5%8F%AF%E9%87%8A%E6%94%BE%E8%B5%84%E6%BA%90%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">2可释放资源的使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-1-Using-IDisposable"><span class="toc-text">2.1 Using IDisposable</span></a></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By qiancy</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body></html>
